@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-pt-32">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Menu | Dr. Amina Arafat Shima</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'skin-primary': '#f4fbf8',   
+                        'skin-accent': '#8FBC8F',    
+                        'skin-dark': '#2F4F4F',      
+                        'skin-light': '#E0FFFF',     
+                        'skin-surface': '#ffffff',   
+                        'skin-muted': '#6b7280',     
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(47, 79, 79, 0.08)',
+                        'glow': '0 0 20px rgba(143, 188, 143, 0.3)',
+                    },
+                    backgroundImage: {
+                        'dots': 'radial-gradient(#8FBC8F 1px, transparent 1px)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #f4fbf8;
+            background-image: radial-gradient(#8FBC8F 0.5px, transparent 0.5px);
+            background-size: 24px 24px; 
+        }
+        ::selection { background-color: #8FBC8F; color: white; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f4fbf8; }
+        ::-webkit-scrollbar-thumb { background: #8FBC8F; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2F4F4F; }
+    </style>
+</head>
+<body class="text-skin-dark font-sans antialiased">
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+    </script>
+
+    
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center max-w-screen-xl">
+            <a href="index.html#home" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-skin-accent rounded-full flex items-center justify-center text-white font-bold text-sm shadow-glow group-hover:scale-110 transition">DR</div>
+                <span class="text-xl font-bold tracking-tight text-skin-dark">
+                    Dr. <span class="text-skin-accent">Amina Arafat Shima</span>
+                </span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-skin-dark/80">
+                <a href="index.html#about" class="hover:text-skin-accent transition py-2 border-b-2 border-transparent hover:border-skin-accent">About</a>
+                <a href="index.html#visuals" class="hover:text-skin-accent transition py-2 border-b-2 border-transparent hover:border-skin-accent">Philosophy</a>
+                <a href="treatments.html" class="text-skin-accent font-bold transition py-2 border-b-2 border-skin-accent">Treatments</a>
+                <a href="index.html#campaigns" class="hover:text-skin-accent transition py-2 border-b-2 border-transparent hover:border-skin-accent">Campaigns</a>
+                <a href="index.html#education" class="hover:text-skin-accent transition py-2 border-b-2 border-transparent hover:border-skin-accent">Qualifications</a>
+                <a href="info.html" class="hover:text-skin-accent transition py-2 border-b-2 border-transparent hover:border-skin-accent">Blog & Articles</a>
+                <a href="index.html#reviews" class="hover:text-skin-accent transition py-2 border-b-2 border-transparent hover:border-skin-accent">Patient Reviews</a>
+                
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="index.html#contact" class="bg-skin-accent text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-skin-accent/30 hover:bg-skin-dark transition-all duration-300 transform hover:-translate-y-0.5 text-sm">
+                    Book Appointment
+                </a>
+            </div>
+
+            <button id="menu-button" class="md:hidden text-skin-dark focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white border-t border-gray-100 shadow-xl">
+          <div class="flex flex-col p-4 space-y-4 text-center">
+                <a href="index.html#about" class="block text-skin-dark font-medium">About</a>
+                <a href="index.html#treatments" class="block text-skin-dark font-medium">Treatments</a>
+                <a href="index.html#campaigns" class="block text-skin-dark font-medium">Campaigns</a>
+                <a href="index.html#education" class="block text-skin-dark font-medium">Qualifications</a>
+                <a href="index.html#blog" class="block text-skin-dark font-medium">Blog & Articles</a>
+                <a href="index.html#reviews" class="block text-skin-dark font-medium">Patient Reviews</a>
+                <a href="index.html#contact" class="block bg-skin-accent text-white py-3 rounded-xl font-bold">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="sticky top-[73px] z-40 bg-white/90 backdrop-blur-sm border-b border-gray-100 shadow-sm py-3 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-center space-x-8 text-sm font-semibold text-gray-500">
+            <a href="#dermatology" class="hover:text-skin-accent transition">Core Dermatology</a>
+            <a href="#aesthetic" class="hover:text-skin-accent transition">Rejuvenation</a>
+            <a href="#regenerative" class="hover:text-skin-accent transition">PRP & Regenerative</a>
+            <a href="#technology" class="hover:text-skin-accent transition">Laser & Contouring</a>
+        </div>
+    </div>
+
+    <main>
+        
+        <section class="py-16 bg-skin-primary text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-skin-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-skin-light rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+            
+            <div class="container mx-auto px-4 max-w-screen-xl relative z-10" data-aos="fade-down">
+                <span class="bg-white border border-skin-accent/30 text-skin-accent px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block shadow-sm">
+                    Comprehensive Care
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold text-skin-dark mb-4">Detailed Treatment Menu</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From essential dermatological care to cutting-edge aesthetic and regenerative procedures, we offer personalized solutions for your unique skin and body goals.
+                </p>
+            </div>
+        </section>
+
+        
+        <section id="dermatology" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-screen-xl">
+                <div class="flex items-center gap-4 mb-12" data-aos="fade-right">
+                    <div class="h-10 w-1 bg-skin-accent rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-skin-dark">Core Dermatology & Scar Management</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt1.jpg" alt="General Skin Disorders" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">General Skin Disorders</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Comprehensive diagnosis and management of common issues including eczema, fungal infections, allergic reactions, and nail disorders.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Full body skin exam</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Hairfall treatment plans</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt2.jpg" alt="Acne Care" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Acne & Melasma Care</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Targeted protocols for challenging pigmentation, active acne, and post-acne scarring using a multi-modality approach.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Hyperpigmentation solutions</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Acne scar resurfacing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt3.jpg" alt="Minor Surgery" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Minor Skin Surgery</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Safe, precise removal of benign skin growths and lesions with a strong focus on aesthetic outcomes and minimal scarring.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Mole & Wart removal</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Skin tag excision</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="aesthetic" class="py-20 bg-skin-primary border-t border-white">
+            <div class="container mx-auto px-6 max-w-screen-xl">
+                <div class="flex items-center gap-4 mb-12" data-aos="fade-right">
+                    <div class="h-10 w-1 bg-skin-accent rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-skin-dark">Skin Rejuvenation & Anti-Aging</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt4.jpg" alt="Antioxidant" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Antioxidant Boosters</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Advanced therapies designed to enhance skin luminosity, fight free radicals, and improve overall skin texture and tone.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Glutathione brightening</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Vitamin C infusions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt5.jpg" alt="Mesotherapy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Mesotherapy & Microneedling</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Needle-based therapies to deliver potent cocktails of vitamins, growth factors (Exosomes), and boosters directly to the dermis.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Facial Mesotherapy</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Exosome therapy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt6.jpg" alt="Stretch Marks" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Stretch Marks & Anti-Aging</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Combined protocols for improving the texture and appearance of stretch marks, alongside overall anti-aging therapies.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Collagen induction therapy</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>RF Microneedling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="regenerative" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-screen-xl">
+                <div class="flex items-center gap-4 mb-12" data-aos="fade-right">
+                    <div class="h-10 w-1 bg-skin-accent rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-skin-dark">PRP, PRF, & Sexual Health</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt7.jpg" alt="PRP Therapy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Face & Hair PRP / PRF</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Utilizing Platelet-Rich Plasma (PRP) derived from your own blood to stimulate hair follicles, collagen synthesis, and natural rejuvenation.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Hair restoration PRP</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Vampire facials (PRF)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt8.jpg" alt="Sexual Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Sexual Health (P-Shot)</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Specialized regenerative procedures like the P-Shot (Priapus Shot) for male sexual health, using growth factors for enhanced function.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Regenerative injections</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Discreet consultation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-56 overflow-hidden relative grayscale opacity-70">
+                            <img src="https://placehold.co/600x400/FAFBFC/2F4F4F?text=Stem+Cells" alt="Stem Cell" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow justify-center items-center text-center">
+                            <span class="text-skin-accent font-bold text-sm uppercase tracking-widest mb-2 bg-skin-light px-3 py-1 rounded-full">Coming Soon</span>
+                            <h3 class="text-xl font-bold mb-2 text-gray-400">Stem Cell Therapy</h3>
+                            <p class="text-gray-400 text-xs">We constantly evaluate new regenerative therapies to bring the most advanced treatments to our patients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="technology" class="py-20 bg-skin-primary border-t border-white">
+            <div class="container mx-auto px-6 max-w-screen-xl">
+                <div class="flex items-center gap-4 mb-12" data-aos="fade-right">
+                    <div class="h-10 w-1 bg-skin-accent rounded-full"></div>
+                    <h2 class="text-3xl font-bold text-skin-dark">Laser, HIFU, & Body Contouring</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                   
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt9.jpg" alt="Laser Hair Removal" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">Laser Hair & Pigmentation</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Safe laser technology for permanent hair reduction, vascular lesion removal, and treatment of deep-seated pigmentation.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Diode & Q-switched laser</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Sun damage repair</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-xl hover:border-skin-accent/30 transition duration-300 group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="assets/img/trt10.jpg" alt="HIFU" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition"></div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-skin-dark">HIFU & Body Contouring</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Non-invasive High-Intensity Focused Ultrasound (HIFU) for skin tightening and lifting, plus Lypolytic injections for fat reduction.</p>
+                            <ul class="space-y-2 text-sm text-gray-500 mt-auto">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Non-surgical face lift</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-skin-accent rounded-full mr-2"></span>Targeted fat loss</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+       
+        <section class="py-16 bg-white text-center">
+            <div class="container mx-auto px-6 max-w-screen-xl" data-aos="fade-up">
+                <div class="bg-skin-dark rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-skin-accent/20 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Begin Your Skin Journey?</h3>
+                        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+                            Schedule a private consultation with Dr. Shima to discuss a treatment plan tailored just for you.
+                        </p>
+                        <a href="index.html#contact" class="inline-block bg-skin-accent text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-white hover:text-skin-dark transition duration-300 transform hover:-translate-y-1">
+                            Book Your Appointment Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <footer class="bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-6 py-16 max-w-screen-xl">
+            <div class="grid md:grid-cols-3 gap-12">
+                
+               
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 bg-skin-accent rounded-full flex items-center justify-center text-white font-bold text-sm shadow-glow">DR</div>
+                        <span class="text-xl font-bold tracking-tight text-skin-dark">Dr. <span class="text-skin-accent">Amina Arafat Shima</span></span>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Dedicated to enhancing your natural beauty through advanced dermatological care and aesthetic precision.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=100072445510615" target="_blank" class="w-8 h-8 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center text-gray-500 hover:text-blue-600 hover:border-blue-600 transition">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@dr.shimaarafat" target="_blank" class="w-8 h-8 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center text-gray-500 hover:text-red-600 hover:border-red-600 transition">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h4 class="font-bold text-skin-dark mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="index.html#home" class="hover:text-skin-accent transition">Home</a></li>
+                        <li><a href="index.html#about" class="hover:text-skin-accent transition">About Dr. Shima</a></li>
+                        <li><a href="treatments.html" class="hover:text-skin-accent transition">Treatments</a></li>
+                        <li><a href="index.html#campaigns" class="hover:text-skin-accent transition">Campaigns</a></li>
+                        <li><a href="index.html#education" class="hover:text-skin-accent transition">Qualifications</a></li>
+                        <li><a href="info.html" class="hover:text-skin-accent transition">Blog & Articles</a></li>
+                        <li><a href="index.html#reviews" class="hover:text-skin-accent transition">Patient Reviews</a></li>
+                    </ul>
+                </div>
+
+                
+                <div>
+                    <h4 class="font-bold text-skin-dark mb-6">Visit Us</h4>
+                    <div class="space-y-4 text-sm text-gray-500">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-skin-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <p>598/C, Sahidbaki Road, Kacchi Vai Building,<br> Lift 3, Dhaka-1219, Bangladesh</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-skin-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <a href="tel:01715438480" class="hover:text-skin-accent transition">01715438480</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-skin-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:arafatshima@gmail.com" class="hover:text-skin-accent transition">arafatshima@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 h-32 w-full bg-gray-200 rounded-lg overflow-hidden shadow-inner relative group">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1825.9207818393281!2d90.41682889372954!3d23.753028634586176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9001b544f93%3A0xb7ea59db21d29ecb!2sSkinologic%20Laser%20%26%20Aesthetic%20Center!5e0!3m2!1sen!2sbd!4v1764118161769!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <a href="https://goo.gl/maps/YourMapLink" target="_blank" class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition pointer-events-none"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-xs text-gray-400">
+                <p>&copy; 2025 Dr. Amina Arafat Shima. All rights reserved. Designed By <a href="https://www.linkedin.com/in/ismailmahmud" target="_blank" rel="noopener" class="font-bold hover:text-skin-accent transition-colors duration-300">Ismail Mahmud Nur.</a></p>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
