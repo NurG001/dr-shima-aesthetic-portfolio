@@ -1,14 +1,12 @@
 # Dr. Amina Arafat Shima – Aesthetic Medicine Portfolio
 
-A fully responsive and elegant portfolio website built for an **Aesthetic Consultant & Surgeon**, focusing on clean visual hierarchy, medical-grade aesthetics, and seamless user experience.  
-This portfolio blends calming colors, refined typography, smooth animations, and functional booking features to create a trustworthy digital presence.
+A fully responsive and elegant portfolio website built for an **Aesthetic Consultant & Surgeon**, focusing on clean visual hierarchy, medical-grade aesthetics, and seamless user experience. This portfolio blends calming colors, refined typography, smooth animations, and functional booking features to create a trustworthy digital presence.
 
 ---
 
 ## 🔗 Live Demo
 
-👉 **[View the Live Website](https://yourusername.github.io/amina-portfolio/)**  
-*Replace `yourusername` with your actual GitHub username after enabling GitHub Pages.*
+👉 **[View the Live Website](https://draminaarafatshima.com/)**  
 
 ---
 
@@ -65,12 +63,13 @@ This portfolio blends calming colors, refined typography, smooth animations, and
 ├── index.html             # Main Landing Page (SPA-like sections)
 ├── treatments.html        # Full list of treatments, procedures & details
 ├── info.html              # Blog landing page + article templates
+├── article-prp.html      
+├── article-melasma.html  
+├── article-anti-aging.html  
 │
 └── /assets
-├── images/           # Optimized JPEG/WEBP images
-├── videos/           # Hero / About section videos
-├── certificates/     # Certificates for modal gallery
-└── icons/            # SVG icons & UI assets
+├──── images/           
+├──── videos/           
 
 ````
 
@@ -110,7 +109,5 @@ This project uses a **Clean Medical Aesthetic** approach with a focus on trust, 
 
 © **2025 Dr. Amina Arafat Shima**
 **All Rights Reserved.**
-
-This project is licensed for presentation and portfolio purposes unless otherwise permitted.
 
 ---
